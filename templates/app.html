@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <!-- <link href="/css/skeleton.css" rel="stylesheet"> -->
+  <!-- <script src="/js/skeleton.js"></script> -->
+ 
+  <title></title>
+</head>
+<body>
+<h1>Rotem's Student Search</h1>
+ 
+ <form action="/search" method="POST">
+     <input name="text">
+     <input type="submit" value="Search">
+ </form>
+
+ <ul>
+ {% for name in names %}
+ <li><a href={{name[1]}}>{{name[0]}}</a></li>
+ {% endfor %}
+ </ul>
+
+
+</body>
+</html>
