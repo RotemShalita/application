@@ -25,7 +25,8 @@ def search():
 
     searched_list = []
     for student, _ in get_jsons():
-        if searched_str in student["name"].lower():
+        #if searched_str in student["name"].lower(): #this would be for searching only the names and not the other content of the json
+        if searched_str in str(student):
             searched_list.append([student["name"]])
 
     return render_template('app.html', names=searched_list)
