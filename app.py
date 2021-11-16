@@ -19,8 +19,9 @@ def main():
 
 @app.route("/search", methods=['POST'])
 def search():
-    if not 'text' in request.form:
-        return "Bad search value"
+    #if 'text' in request.form:
+    your_text = request.form['text']
+    print("you searched for" + your_text)
     searched_str = request.form['text'].lower()
 
     searched_list = []
@@ -29,13 +30,14 @@ def search():
         if searched_str in str(student):
             searched_list.append([student["name"]])
 
-    return render_template('app.html', names=searched_list)
+    return render_template('search_results.html', names=searched_list, your_text=your_text)
 
 @app.route("/user/<uid>")
 def api_info(uid):
     for student, path in get_jsons():
         if student["name"] == uid:
-            return student
+        #    return student #this returns the data as a plain json
+            return render_template('student.html', title='student', student=student)
 
 @app.route("/user/")
 def user():

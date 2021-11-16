@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <!-- <link href="/css/skeleton.css" rel="stylesheet"> -->
+  <!-- <script src="/js/skeleton.js"></script> -->
+ 
+  <title></title>
+</head>
+<body>
+<h2>Student Data:</h2>
+ 
+<table>
+  {% for key in student.keys() %}
+     <tr><td>{{ key }}</td><td>{{ student[key] }}</td></tr>
+  {% endfor %}
+</table>
+
+
+</body>
+</html>

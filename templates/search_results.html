@@ -16,11 +16,12 @@
      <input type="submit" value="Search">
  </form>
 
-<!--  {% if text %}
-  You searched for: <b>{{ text }}</b>
- {% else %}
-  You did not search for anything.
- {% endif %} -->
+ {% if your_text %}
+ You searched for: <b>{{ your_text }}</b>
+{% else %}
+  You did not search for anything. Please enter a text.
+{% endif %}
+
 
  <ul>
  {% for name in names %}
