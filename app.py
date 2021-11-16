@@ -12,7 +12,7 @@ def get_jsons():
 def main():
     names = []
     for student, path in get_jsons():
-        names += [(student["name"], path)]
+        names.append((student["name"], path))
 
     print(names)
     return render_template('app.html', names=names)
@@ -24,10 +24,18 @@ def search():
     searched_str = request.form['text'].lower()
 
     searched_list = []
-    for student in get_jsons():
+    for student, _ in get_jsons():
         if searched_str in student["name"].lower():
-            searched_list += [student["name"]]
+            searched_list.append([student["name"]])
 
     return render_template('app.html', names=searched_list)
 
-    
+@app.route("/user/<uid>")
+def api_info(uid):
+    for student, path in get_jsons():
+        if student["name"] == uid:
+            return student
+
+@app.route("/user/")
+def user():
+    return 'Please search for a student' 
