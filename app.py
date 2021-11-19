@@ -5,7 +5,8 @@ import os
 app = Flask(__name__)
 
 def get_jsons():
-    students_dir = "..\\wis-advanced-python-2021-2022\\students"
+    #students_dir = "..\\wis-advanced-python-2021-2022\\students"
+    students_dir = os.path.join("..", "wis-advanced-python-2021-2022", "students")
     return [(json.load(open(os.path.join(students_dir, i))), os.path.join(students_dir, i)) for i in os.listdir(students_dir)]
 
 @app.route("/")
