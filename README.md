@@ -1,5 +1,6 @@
 This is a search application I'm creating, to search through json files of the students in the course.
-Specify the location of the json files in config.txt. 
+
+Create a config.txt with the appropriate path and specify the location of the json files in config.txt
 
 To run flask on Windows:
 
